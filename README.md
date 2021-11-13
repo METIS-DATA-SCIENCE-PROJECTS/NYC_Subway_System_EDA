@@ -1,7 +1,7 @@
 # NYC_Subway_System_EDA
 
-## Project-01: Exploratory Data Analysis (EDA) Projects of MTA Turnstile Data:
-This repo contains Project-01 data and solution at Istanbul Data Science Academy. Project-01 is about Exploratory Data Analysis (EDA) of Metropolitan Transportation Authority (MTA) Turnstile Data.
+## Project-01: Exploratory Data Analysis (EDA) of MTA Turnstile Data:
+This repo contains Project-01 data and solution at Istanbul Data Science Academy following Metis curriculum. Project-01 is about Exploratory Data Analysis (EDA) of Metropolitan Transportation Authority (MTA) Turnstile Data between November and May 2021 contains **5,242,282 rows and 11 columns** or 6-month worth of data.
 
 **Exploratory Data Analysis (EDA):**
 
@@ -21,9 +21,26 @@ The Metropolitan Transportation Authority is North America's largest transportat
 
 The MTA network comprises the nation’s largest bus fleet and more subway and commuter rail cars than all other U.S. transit systems combined. The MTA's operating agencies are MTA New York City Transit, MTA Bus, Long Island Rail Road, Metro-North Railroad, and MTA Bridges and Tunnels.
 
+Turnstile data is derived from the physical device at a Control Area (Station) used to collect fares for 
+entry into the system. These fares are collected via swipes from a plastic media name MetroCard. The 
+collected data is then transmitted to a mainframe application called Automated Fare Collection system 
+(AFC).
+
+**Data Collection Methodology:**
+
+The audit register data is extracted from a central database weekly on **Saturdays** for posting. The actual register data is generated at the turnstile device **every 4 hours** at which time the device uploads the data to a central database.
+
+The data is broken down to Daily and Hourly periods. The data is **10 digits long and will roll-over to zero (0) on over-flow**. 
+
+Other factors that may impact the data are:
+
+* Hardware failure where the hard drive needs to be replaced, and initialized.
+* Data corruption from faulty devices, or heavy banging on the turnstile
+
 **MTA Turnstile Data:**
 
 Data obtained from http://web.mta.info/developers/turnstile.html.
+
 
 **Field Descriptions:**
 
@@ -41,10 +58,11 @@ Data obtained from http://web.mta.info/developers/turnstile.html.
 
 **DATE:**	Represents the date (MM-DD-YY)
 
-**TIME:**	Represents the time (hh:mm:ss) for a scheduled audit event
+**TIME:**	Represents the time (hh:mm:ss) for a scheduled audit event. The four hour intervals will differ from other stations due to the need for staggering to prevent flooding the system with audit readings all at once. Systemwide, stations have been set to begin audit transmittal between 00 to 03 hours, then every 4 hours after the first audit of the day.
 
 **DESC:**	Represent the "REGULAR" scheduled audit event (Normally occurs every 4 hours)
 
-**ENTRIES:**	The comulative entry register value for a device
+**ENTRIES:**	The cumulative entry register value for a device.It is a 10 digit number representing the number of entries on the specific device since its inception. Other forms 
+of initialization may occur upon roll-over of the counter, erasing the memory device containing the register data, and replacing the processing device of the turnstile.
 
 **EXITS:**	The cumulative exit register value for a device
