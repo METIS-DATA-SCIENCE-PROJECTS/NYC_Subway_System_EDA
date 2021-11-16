@@ -66,3 +66,9 @@ Data obtained from http://web.mta.info/developers/turnstile.html.
 of initialization may occur upon roll-over of the counter, erasing the memory device containing the register data, and replacing the processing device of the turnstile.
 
 **EXITS:**	The cumulative exit register value for a device
+
+**Findings:**
+
+![name](https://github.com/METIS-DATA-SCIENCE-PROJECTS/NYC_Subway_System_EDA/blob/main/bar_days.png)
+![name](https://github.com/METIS-DATA-SCIENCE-PROJECTS/NYC_Subway_System_EDA/blob/main/output.png)
+![name](https://github.com/METIS-DATA-SCIENCE-PROJECTS/NYC_Subway_System_EDA/blob/main/station_day_heatmap.png)
